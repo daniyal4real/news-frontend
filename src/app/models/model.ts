@@ -13,5 +13,5 @@ export interface PageInfo {
 
 export interface Res {
   news: News[]
-  pageInfo: PageInfo
+  page_info: PageInfo
 }

@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { NewsService } from "../../services/newsService";
-import {News, Res} from "../../models/model";
+import {News, PageInfo, Res} from "../../models/model";
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-news-list',
@@ -8,12 +11,17 @@ import {News, Res} from "../../models/model";
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  @Input() news!: News[];
+  @Input() news!: News[]
+  @Input() page_info!: PageInfo
 
-  constructor(private newsService: NewsService) { }
+
+  constructor(
+    private newsService: NewsService, 
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-
   }
+
 
 }

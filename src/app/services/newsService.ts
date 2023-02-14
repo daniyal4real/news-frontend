@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {News, Res} from "../models/model";
+import {News, PageInfo, Res} from "../models/model";
+import { Page } from 'ngx-pagination';
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class NewsService {
   }
 
   getById(id: number): Observable<Res> {
-    return this.http.get<Res>('https://crawler19.azurewebsites.net/v1/news' + id);
+    return this.http.get<Res>('https://crawler19.azurewebsites.net/v1/news/' + id);
   }
 
 
